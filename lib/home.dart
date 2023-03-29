@@ -31,7 +31,9 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Center(
       child: ElevatedButton(
-        onPressed: () {},
+        onPressed: () {
+          sendEmail();
+        },
         child: const Text('Send Email'),
       ),
     );
