@@ -21,9 +21,11 @@ class _MyHomePageState extends State<MyHomePage> {
 
     final smtpServer = gmailSaslXoauth2(email[0], token.toString());
     final message = Message()
-      ..from = Address(email[0], 'Bibek')
-      ..subject = 'hello'
+      ..from = Address(email, 'Bibek')
+      ..recipients = ['gyawali.bibek02@gmail.com']
+      ..subject = 'Sent From Flutter App'
       ..text = 'This is test email';
+
     await send(message, smtpServer);
   }
 
