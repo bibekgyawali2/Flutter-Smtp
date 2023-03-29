@@ -17,7 +17,9 @@ class _MyHomePageState extends State<MyHomePage> {
     if (user == null) return;
     final email = user.email;
     final auth = await user.authentication;
+
     final token = auth.accessToken;
+    print({"token a =$token"});
 
     final smtpServer = gmailSaslXoauth2(email[0], token.toString());
     final message = Message()

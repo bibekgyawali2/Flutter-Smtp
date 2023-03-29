@@ -5,7 +5,7 @@ class GoogleAuthApi {
       GoogleSignIn(scopes: ['https://mail.google.com/']);
 
   static Future<GoogleSignInAccount?> signIn() async {
-    _googleSignIn.forceCodeForRefreshToken;
+    _googleSignIn.forceCodeForRefreshToken = true;
     return await _googleSignIn.signIn();
   }
 }
